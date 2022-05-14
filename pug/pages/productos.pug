@@ -3,7 +3,7 @@ block append config
     - titlePage = "Productos"
 
 block append content
-    section.img-quienes-somos
+    section
         .container
             .row
                 .col-12
@@ -13,7 +13,7 @@ block append content
                                 img(src=`./img/assets/${pcs.img}`, alt=`${pcs.name}`)
 
                             div(class=`item-expanded-${pcs.name}-${i} d-none text-center`)
-                                h2 #{pcs.name}
+                                h2.text-white.font-weight-bold #{pcs.name}
                                 if pcs.branch 
                                     each b in pcs.branch
                                         .card.card-body.m-2
@@ -21,9 +21,12 @@ block append content
                                             each t in b.texts
                                                 p.card-text #{t}
 
-                                        .d-flex.justify-content-center    
+                                        .d-flex.justify-content-center.flex-wrap  
                                             each img in b.img
-                                                img(src=`./img/assets/productos/${img}`, alt="", height="150").mx-3
+                                                img(src=`./img/assets/productos/${img}`, alt="", height="120").m-3
                                 else if pcs.description
                                     .card.card-body.m-2
                                         p #{pcs.description}
+                                    .d-flex.justify-content-center.flex-wrap
+                                        each img in pcs.products
+                                            img(src=`./img/assets/productos/${img}.png`, alt="", height="150").m-3

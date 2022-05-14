@@ -1,0 +1,12 @@
+extends ../templates/template.pug
+block append config
+    - titlePage = "Login"
+
+block append content
+    .container
+        .row.py-3
+            .col-12
+                form(action="")
+                    input(type="text", required, pattern='[A-Za-z_-]{1,15}', placeholder="Usuario")
+                    input(type="tel", required, pattern='[0-9]{1,15}', placeholder="Password")
+                    input(type="submit", value="Enviar")

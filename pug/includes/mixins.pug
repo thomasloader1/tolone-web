@@ -1,13 +1,18 @@
 mixin card-service(dataCards = productCards.principal)
     each card, i in dataCards
-        if i%2 == 0  
-            a.card.card-body.p-4.rounded-xl.d-grid.card-principal.grey.lighten-2(id=`data_card_${i}`,href=`${card.link}`)
-                h4.montserrat.text-uppercase.text-center.font-weight-bold.spacing-1.text-dark= card.name
-                img(src=`./img/assets/${card.img}`, alt="", height="120")
-        else 
-            a.card.card-body.my-3.p-4.rounded-xl.d-grid.card-principal.grey.lighten-1(id=`data_card_${i}`,href=`${card.link}`)
-                img(src=`./img/assets/${card.img}`, alt="", height="120")
-                h4.montserrat.text-uppercase.text-center.font-weight-bold.spacing-1.text-dark= card.name
+        //- console.log(card, i)
+        .col.my-2
+            a.card.card-body.p-4.rounded-xl.d-grid.card-principal.transparent.lighten-2(id=`data_card_${i}`,href=`${card.link}`, style="background-color:transparent !important;")
+                h5.montserrat.text-uppercase.text-center.font-weight-bold.spacing-1.text-white= card.name
+                img(src=`./img/assets/${card.img}`, alt="", height="100")
+        //- if i%2 == 0  
+        //-     a.card.card-body.p-4.rounded-xl.d-grid.card-principal.transparent.lighten-2(id=`data_card_${i}`,href=`${card.link}`, style="background-color:transparent !important;")
+        //-         h4.montserrat.text-uppercase.text-center.font-weight-bold.spacing-1.text-white= card.name
+        //-         img(src=`./img/assets/${card.img}`, alt="", height="120")
+        //- else 
+        //-     a.card.card-body.my-3.p-4.rounded-xl.d-grid.card-principal.transparent.lighten-1(id=`data_card_${i}`,href=`${card.link}`, style="background-color:transparent !important;")
+        //-         img(src=`./img/assets/${card.img}`, alt="", height="120")
+        //-         h4.montserrat.text-uppercase.text-center.font-weight-bold.spacing-1.text-white= card.name
 
 mixin camisetaFrentePrimaria
     #camisetaFrentePrimaria.position-relative
@@ -39,7 +44,7 @@ mixin modelosRemeras(objRemeras)
                     +getRemeras(arr4)  
             .direcciones.w-100.d-flex.justify-content-around.align-items-end                
                 .puntos
-                    span.punto.active(onclick="posicionSlide(1)")
+                    span.punto.active-point(onclick="posicionSlide(1)")
                     span.punto(onclick="posicionSlide(2)")
                     span.punto(onclick="posicionSlide(3)")
                     span.punto(onclick="posicionSlide(4)")  
@@ -64,7 +69,7 @@ mixin nombreNumerosRemeras(nombreNumero)
                     +getNombreNumeros(arrN5)
         .direcciones.w-100.d-flex.justify-content-around.align-items-end                
                 .puntos
-                    span.punto.active(onclick="posicionSlideModels(1)")
+                    span.punto.active-point(onclick="posicionSlideModels(1)")
                     span.punto(onclick="posicionSlideModels(2)")
                     span.punto(onclick="posicionSlideModels(3)")
                     span.punto(onclick="posicionSlideModels(4)") 
@@ -72,14 +77,14 @@ mixin nombreNumerosRemeras(nombreNumero)
 
 mixin formContact()
     //  Default form contact 
-    form#contact-form.text-center.border.border-light.p-5
-        p.h4.mb-4 Contacto
+    form#contact-form.text-center.border.border-light.p-5.bg-white.rounded-xl
+        h3.font-weight-bold.mb-4 Contacto
         //  Name 
         input#defaultContactFormName.form-control.mb-4(type="text", placeholder="Nombre Completo")
         //  Email 
         input#defaultContactFormEmail.form-control.mb-4(type="email", placeholder="E-mail")
         //  Telephone 
-        input#defaultContactFormTelephone.form-control.mb-4(type="number", placeholder="Telefono")
+        input#defaultContactFormTelephone.form-control.mb-4(type="tel", pattern="[0-9]{1,11}",title="Ejemplo: 1198761234", placeholder="Telefono")
         //  Message 
         .form-group
             textarea.form-control.rounded-0#exampleFormControlTextarea2(rows="3", placeholder="Consulta")
@@ -89,8 +94,10 @@ mixin formContact()
         //  Default form contact 
 
 mixin mapTolone()
-    iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.864806508414!2d-58.405000684296844!3d-34.60757998045852!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccaec3423110f%3A0x66a9213179733dd5!2sTolone!5e0!3m2!1ses-419!2sar!4v1596422076119!5m2!1ses-419!2sar", width="100%", height="450", frameborder="0", style="border:0;", allowfullscreen, aria-hidden="false", tabindex="0").rounded-xl
-
+    .card.card-body.text-center
+        h5.font-weight-bold Coronel Ramón Falcón 7035 / 7051 
+        span.mb-3 Galería crédito Liniers #[b Local 36]
+        iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.5754296133982!2d-58.52550805795277!3d-34.64016802889897!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcc8473597dabb%3A0x79ff2c473ca4b430!2sGaler%C3%ADa%20Credito%20Liniers%2C%20Coronel%20Ram%C3%B3n%20Lorenzo%20Falc%C3%B3n%207035%2C%20C1408DSG%20CABA!5e0!3m2!1ses-419!2sar!4v1605900198127!5m2!1ses-419!2sar", width="100%", height="450", frameborder="0", style="border:0;", allowfullscreen, aria-hidden="false", tabindex="0").rounded-xl
 mixin getNombreNumeros(nombreNumeros)
     each e, i in nombreNumeros
         .card.card-body.p-1.m-1(style="width: 120px;")
@@ -113,17 +120,17 @@ mixin formSolicitarCreacion()
         .form-row
             .col-md-12.mb-3
                 label(for="validationCustom01") Nombre Completo
-                input.form-control.required#validationCustom01(type="text",name="name-creation", placeholder="Ingrese nombre completo", )                                    
+                input.form-control.required#validationCustom01(type="text",title="Ejemplo: Alberto Tolone",name="name-creation", placeholder="Ingrese nombre completo", )                                    
                 
         .form-row
             .col-md-6.mb-3
                 label(for="validationCustom03") Email
-                input.form-control.required#validationCustom03(type="email",name="email-creation", placeholder="Email")
+                input.form-control.required#validationCustom03(type="email",pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$",title="Ejemplo: nombre@dominio.com",name="email-creation", placeholder="Email")
                 
                 
             .col-md-6.mb-3
                 label(for="validationCustom04") Telefono
-                input.form-control.required#validationCustom04(type="text",name="phone-creation", placeholder="Telefono")
+                input.form-control.required#validationCustom04(type="tel",pattern="[0-9]{1,11}",title="Ejemplo: 1198761234",name="phone-creation", placeholder="Telefono")
                 
                 
         button.btn.btn-primary.btn-sm(id="send-form-creation") Solicitar

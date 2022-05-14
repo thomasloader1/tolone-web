@@ -4,15 +4,18 @@ block append config
 
 block append content
     .container
-        .row
+        .row.py-4
             .col-12
-                .text-center
-                    h2 Nuestras Marcas
+                .text-center.text-white
+                    h2.font-weight-bold Nuestras Marcas
                     p TOLONE confecciona prendas con materias primas de calidad y ademas ofrece a sus clientes productos e implementos deportivos de primeras marcas, tales como:
-        .row.align-items-center.my-5
-            .col-12.col-md-4
-                img(src="./img/assets/marcas-00.png", alt="").img-fluid
-            .col-12.col-md-4
-                img(src="./img/assets/marcas-01.png", alt="").img-fluid
-            .col-12.col-md-4
-                img(src="./img/assets/marcas-02.png", alt="").img-fluid
+        .row.align-items-center.my-3
+            .col-12
+                .card.card-body
+                    .row.align-items-center
+                        .col-12.col-md-4
+                            img(src="./img/assets/marcas-00.png", alt="").img-fluid
+                        .col-12.col-md-4
+                            img(src="./img/assets/marcas-01.png", alt="").img-fluid
+                        .col-12.col-md-4
+                            img(src="./img/assets/marcas-02.png", alt="").img-fluid

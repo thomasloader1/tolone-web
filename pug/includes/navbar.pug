@@ -9,7 +9,7 @@
             .montserrat.text-center.green-light.font-20
                 p.m-0 Fabrica de indumentaria deportiva
                 p.m-0 Remeras - Camisetas de Futbol
-<nav class="navbar navbar-expand-lg navbar-light bg-white ">
+<nav class="navbar navbar-expand-lg navbar-light blue ">
     <div class="container">
         <button class="navbar-toggler mx-auto" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -18,8 +18,8 @@
             <ul class="navbar-nav mx-auto text-center">
                 each item in navItems
                     case titlePage
-                        when `${item.name}` : li.nav-item.active #[a.nav-link(href=`./${item.link}.html`)=item.name ]
-                        default: li.nav-item #[a.nav-link(href=`./${item.link}.html`)=item.name ]
+                        when `${item.name}` : li.nav-item.active #[a.nav-link.text-white(href=`./${item.link}.html`)=item.name ]
+                        default: li.nav-item #[a.nav-link.text-white(href=`./${item.link}.html`)=item.name ]
 
                 //- if titlePage == "Inicio "
                 //-     <li class="nav-item active">

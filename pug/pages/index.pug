@@ -4,14 +4,15 @@ block append config
 
 block append content
     .container
-        .row.my-3
-            .col-sm-12.col-md-8
+        .row.py-3
+            .col-sm-12.col-xl-8
                 .montserrat.text-uppercase.text-center
-                    h2.my-3 compra directa de fabrica - sin intermediarios
+                    h2.my-3.text-white compra directa de fabrica - sin intermediarios
                     .text-center
                         img(src="./img/assets/disena-tu-camiseta.png", alt="Diseña tu camiseta").img-fluid
                         img(src="./img/assets/home-camisetas.png", alt="Camisetas Deportivas").img-fluid
-                        a.btn.btn-success(href="arma-tu-camiseta.html") ARMA TU CAMISETA
-                        img(src="./img/assets/indumentria-deportiva.png", alt="Indumentaria Deportiva").img-fluid
-            .col-sm-12.col-md-4.my-auto
-                +card-service
+                        a(href="arma-tu-camiseta.html") 
+                            img(src="./img/assets/banner.png", alt="Indumentaria Deportiva", height="150")
+            .col-sm-12.col-xl-4.my-auto
+                .row.py-2
+                    +card-service

@@ -8,12 +8,17 @@
         private $user;
         private $password;
         private $charset;
+        private $enlace;
 
         public function __construct(){
-            $this->host = '192.168.0.61';
+            // $this->host = '192.168.0.61';
+            // $this->db = 'tolone-web-db';
+            // $this->user = 'ad_tolone-web';
+            // $this->password = 'a2PEit6hg7G7';
+            $this->host = 'localhost';
             $this->db = 'tolone-web-db';
-            $this->user = 'ad_tolone-web';
-            $this->password = 'a2PEit6hg7G7';
+            $this->user = 'root';
+            $this->password = '';
             $this->charset = 'utf8mb4';
         }
 
@@ -28,8 +33,12 @@
 
             //echo "Connected successfully";
             //$conn->close();
-
+            $this->enlace = $conn;
             return $conn;
+        }
+
+        function closeEnlace(){
+            mysqli_close($this->enlace);
         }
 
     }

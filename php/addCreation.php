@@ -48,7 +48,18 @@
         $number = $_POST['number'];
         $number_color = $_POST['number_color'];
         
-        $master_addCreation->insertCreation($name, $phone, $email, $post_obj);
+        //$master_addCreation->insertCreation($name, $phone, $email, $post_obj);
+
+          if($master_addCreation->insertCreation($name, $phone, $email, $post_obj) == 200){
+            $email_to = "pedidos@tolone.com.ar";
+            $content = "Nombre: " . $name . "\nEmail: " . $email . "\nTelefono: " . $phone ."\nPedido: \n Modelo seleccionado: ". $model ."\nColor Base: ". $color_base ."\nColor Trama: ". $color_trama ."\nColor Trama Dos: ". $color_trama_two ."\nModelo Numero: ". $number ."\nColor Numero: ". $number_color;
+           
+            mail($email_to,"Nueva solicitud de camiseta", $content);
+          }else{
+              return "Not Complete";
+          }
     }
+
+    $this->closeEnlace();
 
 ?>
